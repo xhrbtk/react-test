@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/react/16.4.0/umd/react.production.min.js"></script>
+    <script src="https://cdn.bootcss.com/react-dom/16.4.0/umd/react-dom.production.min.js"></script>
+</head>
+<style>
+    .red{
+        color: red;
+        border: 1px solid green;
+    }
+    .parent{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    
+    <div id="root">
+
+    </div>
+    <script>
+        let number = 0
+        let onClickButton = () => {
+            number += 1
+            render()
+        }
+        let onClickbutton1 = () => {
+            number -= 1
+            render()
+        }
+        render()
+        let h = React.createElement
+        function render(){
+            // let div = h('div', { className: 'parent'}, 
+            //     h('span', { className: 'red' }, number), 
+            //     h('button', { onClick: onClickButton}, '+'), 
+            //     h('button', { onClick: onClickbutton1 }, '-')
+            // )
+            ReactDOM.render(<div className="parent">
+                <span className="red">{ number }</span>
+                <button onClick={onClickButton}>+</button>
+                <button onClick={onClickbutton1}>-</button>
+                <button></button>
+            </div>, document.querySelector('#root'))
+        }
+    </script>
+</body>
+</html>
