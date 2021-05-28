@@ -23,30 +23,50 @@
 
     </div>
     <script>
-        let number = 0
-        let onClickButton = () => {
-            number += 1
-            render()
-        }
-        let onClickbutton1 = () => {
-            number -= 1
-            render()
-        }
-        render()
-        let h = React.createElement
-        function render(){
-            // let div = h('div', { className: 'parent'}, 
-            //     h('span', { className: 'red' }, number), 
-            //     h('button', { onClick: onClickButton}, '+'), 
-            //     h('button', { onClick: onClickbutton1 }, '-')
-            // )
-            ReactDOM.render(<div className="parent">
-                <span className="red">{ number }</span>
-                <button onClick={onClickButton}>+</button>
-                <button onClick={onClickbutton1}>-</button>
-                <button></button>
-            </div>, document.querySelector('#root'))
-        }
+       
+// function App(props){
+//   return (
+//     <div>
+//       <Box1 name="xhr" age="18"/>
+//     </div>
+//   )
+// }
+
+// class Box1 extends React.Component{
+//   constructor(props){
+//     super(props)
+//     this.state = {
+      
+//     }
+//   }
+//   render(){
+//     return <div className="red">name: {this.props.name}, age: {this.props.age}</div>
+//   }
+// }
+
+
+
+// render()
+
+
+// function render(){
+//   ReactDOM.render(
+//     <App/>,  // React.createElement(App)
+//     document.querySelector('#root')
+//   )
+// }
+
+function Box(obj){
+return (
+<div>名字：{obj.name}, age: {obj.age}</div>
+)
+}
+
+ReactDOM.render(
+<Box name="xhr" age="18" />,
+document.querySelector("#root")
+)
+
     </script>
 </body>
 </html>
